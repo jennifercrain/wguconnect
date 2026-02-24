@@ -19,52 +19,33 @@
     <div class="text-center mb-8">
      <h1 id="main-title" class="text-2xl md:text-3xl font-bold mb-2" style="color: #002855;">Why Is This Post Effective?</h1>
      <p id="instruction-text" class="text-gray-600">Click on the elements below that make this post work well</p>
-    </div><!-- Post Navigation Buttons -->
-    <div class="flex gap-3 mb-6 justify-center"><button id="post-1-btn" onclick="switchPost(1)" class="px-6 py-2 rounded-lg font-semibold transition-all" style="background-color: #0070F0; color: white;"> Post 1 </button> <button id="post-2-btn" onclick="switchPost(2)" class="px-6 py-2 rounded-lg font-semibold transition-all" style="background-color: #e5e7eb; color: #002855;"> Post 2 </button>
+    </div><!-- Post Navigation -->
+    <div class="flex justify-center gap-2 mb-6"><button onclick="switchPost(1)" class="post-nav-btn px-4 py-2 rounded-lg font-semibold transition-all" data-post="1" style="background-color: #0070F0; color: white;">Post 1</button> <button onclick="switchPost(2)" class="post-nav-btn px-4 py-2 rounded-lg font-semibold transition-all" data-post="2" style="background-color: #D0D0D0; color: #333;">Post 2</button> <button onclick="switchPost(3)" class="post-nav-btn px-4 py-2 rounded-lg font-semibold transition-all" data-post="3" style="background-color: #D0D0D0; color: #333;">Post 3</button> <button onclick="switchPost(4)" class="post-nav-btn px-4 py-2 rounded-lg font-semibold transition-all" data-post="4" style="background-color: #D0D0D0; color: #333;">Post 4</button>
     </div><!-- Main Layout: Post + Analysis Side by Side -->
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
-     <!-- Post 1 Card -->
-     <div id="post-1-card" class="bg-white rounded-xl shadow-lg p-6 border-l-4 h-fit" style="border-left-color: #0070F0;">
-      <div class="flex items-center gap-3 mb-4">
-       <div class="w-10 h-10 rounded-full flex items-center justify-center text-white font-bold" style="background: linear-gradient(135deg, #0070F0, #46B1EF);">
-        AC
-       </div>
-       <div>
-        <p class="font-semibold" style="color: #002855;">Aidan Clements</p>
-        <p class="text-xs text-gray-500">Peer Coach Student Intern</p>
-       </div>
-      </div>
-      <div class="space-y-3 text-gray-800">
-       <p class="font-semibold text-lg" style="color: #002855;">Which Udemy Course Do you Prefer?</p>
-       <p>Which Udemy Course do you prefer to study for Network+?</p>
-       <ul class="space-y-2 text-sm">
-        <li>• Andrew Ramdayal CompTIA Network+ N10-009 Full Course, Labs, Course Notes | Udemy Business</li>
-        <li>• Jason Dion CompTIA Network+ (N10-009) Full Course &amp; Practice Exam | Udemy Business</li>
-        <li>• Mike Myers TOTAL: CompTIA Network+ (N10-009) + Practice Exam | Udemy Business</li>
-       </ul>
-       <p class="text-sm">Or…</p>
-       <p class="text-sm">Professor Messer How to Pass Your CompTIA N10-009 Network+ Exam</p>
-      </div>
-     </div><!-- Post 2 Card -->
-     <div id="post-2-card" class="bg-white rounded-xl shadow-lg p-6 border-l-4 h-fit hidden" style="border-left-color: #0070F0;">
-      <div class="flex items-center gap-3 mb-4">
-       <div class="w-10 h-10 rounded-full flex items-center justify-center text-white font-bold" style="background: linear-gradient(135deg, #0070F0, #46B1EF);">
-        AC
-       </div>
-       <div>
-        <p class="font-semibold" style="color: #002855;">Ashley Collins</p>
-        <p class="text-xs text-gray-500">Peer Coach Student Intern</p>
-       </div>
-      </div>
-      <div class="space-y-3 text-gray-800">
-       <p class="font-semibold text-lg" style="color: #002855;">Your Go-To Study Break</p>
-       <p>Taking regular study breaks is crucial for retaining information. I usually step away every 45 minutes to stretch and get some water. What's your favorite way to recharge?</p>
-      </div>
+     <!-- Post Card Container -->
+     <div id="post-content" class="bg-white rounded-xl shadow-lg p-6 border-l-4 h-fit" style="border-left-color: #0070F0;">
      </div><!-- Clickable Analysis Options -->
      <div class="space-y-3">
-      <p class="font-semibold text-sm uppercase tracking-wide" style="color: #002855;">Select all that apply:</p>
-      <div id="options-container"><!-- Options will be inserted here by JavaScript -->
-      </div>
+      <p class="font-semibold text-sm uppercase tracking-wide" style="color: #002855;">Select all that apply:</p><button id="opt-1" onclick="toggleOption(this, true)" class="analysis-option w-full text-left p-4 bg-white rounded-lg border-2 border-gray-200 hover:border-blue-300 transition-all duration-200 flex items-center gap-3"> <span class="checkmark w-6 h-6 rounded-full border-2 border-gray-300 flex items-center justify-center flex-shrink-0 transition-all">
+        <svg class="w-4 h-4 text-white hidden" fill="currentColor" viewbox="0 0 20 20">
+         <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+        </svg></span> <span class="font-medium text-gray-700">Super short and concise</span> </button> <button id="opt-2" onclick="toggleOption(this, true)" class="analysis-option w-full text-left p-4 bg-white rounded-lg border-2 border-gray-200 hover:border-blue-300 transition-all duration-200 flex items-center gap-3"> <span class="checkmark w-6 h-6 rounded-full border-2 border-gray-300 flex items-center justify-center flex-shrink-0 transition-all">
+        <svg class="w-4 h-4 text-white hidden" fill="currentColor" viewbox="0 0 20 20">
+         <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+        </svg></span> <span class="font-medium text-gray-700">Clear, direct question</span> </button> <button id="opt-3" onclick="toggleOption(this, true)" class="analysis-option w-full text-left p-4 bg-white rounded-lg border-2 border-gray-200 hover:border-blue-300 transition-all duration-200 flex items-center gap-3"> <span class="checkmark w-6 h-6 rounded-full border-2 border-gray-300 flex items-center justify-center flex-shrink-0 transition-all">
+        <svg class="w-4 h-4 text-white hidden" fill="currentColor" viewbox="0 0 20 20">
+         <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+        </svg></span> <span class="font-medium text-gray-700">Immediately applicable to course content</span> </button> <button id="opt-4" onclick="toggleOption(this, true)" class="analysis-option w-full text-left p-4 bg-white rounded-lg border-2 border-gray-200 hover:border-blue-300 transition-all duration-200 flex items-center gap-3"> <span class="checkmark w-6 h-6 rounded-full border-2 border-gray-300 flex items-center justify-center flex-shrink-0 transition-all">
+        <svg class="w-4 h-4 text-white hidden" fill="currentColor" viewbox="0 0 20 20">
+         <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+        </svg></span> <span class="font-medium text-gray-700">Written by a human with no emojis or AI content</span> </button> <button id="opt-5" onclick="toggleOption(this, false)" class="analysis-option w-full text-left p-4 bg-white rounded-lg border-2 border-gray-200 hover:border-blue-300 transition-all duration-200 flex items-center gap-3"> <span class="checkmark w-6 h-6 rounded-full border-2 border-gray-300 flex items-center justify-center flex-shrink-0 transition-all">
+        <svg class="w-4 h-4 text-white hidden" fill="currentColor" viewbox="0 0 20 20">
+         <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+        </svg></span> <span class="font-medium text-gray-700">Uses trending hashtags and emojis</span> </button> <button id="opt-6" onclick="toggleOption(this, false)" class="analysis-option w-full text-left p-4 bg-white rounded-lg border-2 border-gray-200 hover:border-blue-300 transition-all duration-200 flex items-center gap-3"> <span class="checkmark w-6 h-6 rounded-full border-2 border-gray-300 flex items-center justify-center flex-shrink-0 transition-all">
+        <svg class="w-4 h-4 text-white hidden" fill="currentColor" viewbox="0 0 20 20">
+         <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+        </svg></span> <span class="font-medium text-gray-700">Long detailed explanation with multiple paragraphs</span> </button>
      </div>
     </div><!-- Full-Width Check Answers Button --> <button id="check-btn" onclick="checkAnswers()" class="w-full py-4 rounded-lg font-semibold text-white text-lg transition-all duration-200 hover:shadow-lg transform hover:-translate-y-0.5 mb-6" style="background-color: #0070F0;"> Check My Answers </button> <!-- Feedback Area -->
     <div id="feedback" class="p-5 rounded-xl hidden">
@@ -88,80 +69,166 @@
       background_color: "#F1F1F1"
     };
 
+    const posts = [
+      {
+        id: 1,
+        author: "Bryan Ramey",
+        group: "Peer Coach Student Intern",
+        avatar: "BR",
+        borderColor: "#0070F0",
+        gradientStart: "#0070F0",
+        gradientEnd: "#46B1EF",
+        title: "Which Udemy Course Do you Prefer?",
+        content: "Which Udemy Course do you prefer to study for Network+?",
+        details: [
+          "• Andrew Ramdayal CompTIA Network+ N10-009 Full Course, Labs, Course Notes | Udemy Business",
+          "• Jason Dion CompTIA Network+ (N10-009) Full Course & Practice Exam | Udemy Business",
+          "• Mike Myers TOTAL: CompTIA Network+ (N10-009) + Practice Exam | Udemy Business",
+          "",
+          "Or…",
+          "",
+          "Professor Messer How to Pass Your CompTIA N10-009 Network+ Exam"
+        ],
+        correctAnswers: ['opt-1', 'opt-2', 'opt-3', 'opt-4'],
+        incorrectAnswers: ['opt-5', 'opt-6']
+      },
+      {
+        id: 2,
+        author: "Ashley Collins",
+        group: "Peer Coach Student Intern",
+        avatar: "AC",
+        borderColor: "#10B981",
+        gradientStart: "#10B981",
+        gradientEnd: "#34D399",
+        title: "Your Go-To Study Breaks",
+        content: "What's your go-to way to take a break without losing momentum?",
+        details: [
+          "Quick walk, music, stretching, power nap — or something else?"
+        ],
+        correctAnswers: ['opt-1', 'opt-2', 'opt-3'],
+        incorrectAnswers: ['opt-5', 'opt-6']
+      },
+      {
+        id: 3,
+        author: "Zaakirah Taylor",
+        group: "Peer Coach Student Intern",
+        avatar: "ZT",
+        borderColor: "#F59E0B",
+        gradientStart: "#F59E0B",
+        gradientEnd: "#FBBF24",
+        title: "🔑 Your 5-Step Guide to Mastering Systems Thinking",
+        content: "Hey everyone,\n\nIf you're feeling overwhelmed by all the reading, I put together a quick list of the 5 essential concepts and tools you need to master. They are all listed under the \"Learn the Basics\" section on the Systems Thinking Tips page, and they're the building blocks for the tasks!",
+        details: [
+          "Systems and Systems Thinking: Understand the core idea of looking at the whole picture and the relationships between parts, not just individual events.",
+          "Iceberg Model: This is for Task 1. Learn to look past a surface-level event to see the patterns and, most importantly, the underlying structure (mental models/system design) that causes them.",
+          "Behavior Over Time Graphs (BOTs): Also for Task 1. You need to select and apply the graph that accurately shows the trend of key variables in your case study over time.",
+          "Causal Loop Diagrams (CLDs): Crucial for Task 2. These diagrams show the cause-and-effect relationships within a system, specifically how reinforcing (R) and balancing (B) loops create outcomes.",
+          "Systems Archetypes: The other half of Task 2. Archetypes are common, recurring CLD patterns (like \"Fixes that Fail\") that help you quickly identify and explain a system's common problems and leverage points.",
+          "",
+          "If you know these five concepts, you've got the foundation to ace the tasks!",
+          "",
+          "Which one of these concepts was the hardest for you to grasp initially?"
+        ],
+        correctAnswers: ['opt-1', 'opt-2', 'opt-3'],
+        incorrectAnswers: ['opt-5', 'opt-6']
+      },
+      {
+        id: 4,
+        author: "Keila Clark",
+        group: "Peer Coach Student Intern",
+        avatar: "KC",
+        borderColor: "#8B5CF6",
+        gradientStart: "#8B5CF6",
+        gradientEnd: "#A78BFA",
+        title: "Hi C165 learners! 👋",
+        content: "Here's a little support for this week:",
+        details: [
+          "Study Tip: Break down complex problems into smaller steps and tackle one operation at a time.",
+          "",
+          "Remember that white boards are useable in all courses not just math!",
+          "",
+          "WGU Resources:",
+          "  • C165 Course Notes & Practice Problems",
+          "  • Lesson Videos and Study Modules in your WGU portal",
+          "",
+          "Peer Coaching: Struggling with a concept or problem? Reply here — I will get you the schedule link. We can set up a time to look at the available resources together to find the ones that will work best for you.",
+          "",
+          "Keep practicing — every problem you work through gets you closer to mastering the material! 💪"
+        ],
+        correctAnswers: ['opt-1', 'opt-2', 'opt-3', 'opt-4'],
+        incorrectAnswers: ['opt-5', 'opt-6']
+      }
+    ];
+
     let currentPost = 1;
     let selectedOptions = new Set();
     let answered = false;
 
-    const postsData = {
-      1: {
-        options: [
-          { id: 'opt-1', text: 'Super short and concise', correct: true },
-          { id: 'opt-2', text: 'Clear, direct question', correct: true },
-          { id: 'opt-3', text: 'Immediately applicable to course content', correct: true },
-          { id: 'opt-4', text: 'Written by a human with no emojis or AI content', correct: true },
-          { id: 'opt-5', text: 'Uses trending hashtags and emojis', correct: false },
-          { id: 'opt-6', text: 'Long detailed explanation with multiple paragraphs', correct: false }
-        ]
-      },
-      2: {
-        options: [
-          { id: 'opt-1', text: 'Relatable personal practice', correct: true },
-          { id: 'opt-2', text: 'Immediately applicable to course content', correct: true },
-          { id: 'opt-3', text: 'Encourages community engagement', correct: false },
-          { id: 'opt-4', text: 'Highly technical and course-specific', correct: false },
-          { id: 'opt-5', text: 'Uses trending hashtags and emojis', correct: false },
-          { id: 'opt-6', text: 'Long detailed explanation with multiple paragraphs', correct: false }
-        ]
-      }
-    };
-
-    function createOptionButton(option) {
-      const button = document.createElement('button');
-      button.id = option.id;
-      button.className = 'analysis-option w-full text-left p-4 bg-white rounded-lg border-2 border-gray-200 hover:border-blue-300 transition-all duration-200 flex items-center gap-3';
-      button.onclick = (e) => toggleOption(e.target.closest('button'));
-      button.innerHTML = `
-        <span class="checkmark w-6 h-6 rounded-full border-2 border-gray-300 flex items-center justify-center flex-shrink-0 transition-all">
-          <svg class="w-4 h-4 text-white hidden" fill="currentColor" viewBox="0 0 20 20">
-            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-          </svg>
-        </span>
-        <span class="font-medium text-gray-700">${option.text}</span>
+    function renderPost(postId) {
+      const post = posts[postId - 1];
+      const postContent = document.getElementById('post-content');
+      
+      postContent.style.borderLeftColor = post.borderColor;
+      
+      let html = `
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-10 h-10 rounded-full flex items-center justify-center text-white font-bold" style="background: linear-gradient(135deg, ${post.gradientStart}, ${post.gradientEnd});">
+            ${post.avatar}
+          </div>
+          <div>
+            <p class="font-semibold" style="color: #002855;">${post.author}</p>
+            <p class="text-xs text-gray-500">Posted in ${post.group}</p>
+          </div>
+        </div>
+        <div class="space-y-3 text-gray-800">
+          <p class="font-semibold text-lg" style="color: #002855;">${post.title}</p>
       `;
-      return button;
+      
+      if (post.content.includes('\n')) {
+        html += `<p>${post.content.split('\n').join('</p><p>')}</p>`;
+      } else {
+        html += `<p>${post.content}</p>`;
+      }
+      
+      html += '<div class="space-y-2 text-sm">';
+      post.details.forEach(detail => {
+        if (detail === '') {
+          html += '';
+        } else if (detail.startsWith('  •')) {
+          html += `<p style="margin-left: 1.5rem;">${detail.substring(3)}</p>`;
+        } else {
+          html += `<p>${detail}</p>`;
+        }
+      });
+      html += '</div></div>';
+      
+      postContent.innerHTML = html;
     }
 
-    function switchPost(postNum) {
-      if (postNum === currentPost) return;
+    function switchPost(postId) {
+      if (answered) {
+        alert('Please click "Try Again" before switching posts.');
+        return;
+      }
       
-      currentPost = postNum;
-      selectedOptions.clear();
-      answered = false;
+      currentPost = postId;
+      renderPost(postId);
       
-      // Update button styles
-      document.getElementById('post-1-btn').style.backgroundColor = postNum === 1 ? '#0070F0' : '#e5e7eb';
-      document.getElementById('post-1-btn').style.color = postNum === 1 ? 'white' : '#002855';
-      document.getElementById('post-2-btn').style.backgroundColor = postNum === 2 ? '#0070F0' : '#e5e7eb';
-      document.getElementById('post-2-btn').style.color = postNum === 2 ? 'white' : '#002855';
-      
-      // Toggle post visibility
-      document.getElementById('post-1-card').classList.toggle('hidden');
-      document.getElementById('post-2-card').classList.toggle('hidden');
-      
-      // Render new options
-      const container = document.getElementById('options-container');
-      container.innerHTML = '';
-      postsData[currentPost].options.forEach(option => {
-        container.appendChild(createOptionButton(option));
+      // Update button states
+      document.querySelectorAll('.post-nav-btn').forEach(btn => {
+        if (btn.dataset.post == postId) {
+          btn.style.backgroundColor = '#0070F0';
+          btn.style.color = 'white';
+        } else {
+          btn.style.backgroundColor = '#D0D0D0';
+          btn.style.color = '#333';
+        }
       });
       
-      // Reset feedback
-      document.getElementById('feedback').classList.add('hidden');
-      document.getElementById('check-btn').style.display = 'block';
-      document.getElementById('reset-btn').classList.add('hidden');
+      resetQuiz();
     }
 
-    function toggleOption(btn) {
+    function toggleOption(btn, isCorrect) {
       if (answered) return;
       
       const optionId = btn.id;
@@ -189,9 +256,9 @@
       if (answered) return;
       answered = true;
 
-      const options = postsData[currentPost].options;
-      const correctAnswers = options.filter(o => o.correct).map(o => o.id);
-      const incorrectAnswers = options.filter(o => !o.correct).map(o => o.id);
+      const post = posts[currentPost - 1];
+      const correctAnswers = post.correctAnswers;
+      const incorrectAnswers = post.incorrectAnswers;
       
       let correctCount = 0;
       let wrongSelections = 0;
@@ -227,19 +294,13 @@
       
       feedback.classList.remove('hidden');
       
-      const expectedCorrect = correctAnswers.length;
-      
-      if (correctCount === expectedCorrect && wrongSelections === 0) {
+      if (correctCount === correctAnswers.length && wrongSelections === 0) {
         feedback.style.backgroundColor = '#dcfce7';
         feedback.style.color = '#166534';
         feedbackIcon.textContent = '🎉';
         feedbackTitle.textContent = 'Perfect!';
-        if (currentPost === 1) {
-          feedbackText.textContent = 'You identified all the key elements that make this post effective: brevity, clarity, relevance, and authentic human writing.';
-        } else {
-          feedbackText.textContent = 'Great work! You recognized what makes this post resonate with the community.';
-        }
-      } else if (correctCount >= expectedCorrect - 1 && wrongSelections <= 1) {
+        feedbackText.textContent = 'You identified all the key elements that make this post effective!';
+      } else if (correctCount >= correctAnswers.length - 1 && wrongSelections <= 1) {
         feedback.style.backgroundColor = '#fef3c7';
         feedback.style.color = '#92400e';
         feedbackIcon.textContent = '👍';
@@ -250,7 +311,7 @@
         feedback.style.color = '#991b1b';
         feedbackIcon.textContent = '💡';
         feedbackTitle.textContent = 'Keep learning!';
-        feedbackText.textContent = 'Take another look at the post. Effective posts connect with the community and provide value.';
+        feedbackText.textContent = 'Take another look at the post. Effective posts are clear, direct, relevant, and encouraging!';
       }
 
       document.getElementById('check-btn').style.display = 'none';
@@ -279,12 +340,9 @@
       document.getElementById('reset-btn').classList.add('hidden');
     }
 
-    // Initialize on load
-    window.addEventListener('DOMContentLoaded', () => {
-      const container = document.getElementById('options-container');
-      postsData[1].options.forEach(option => {
-        container.appendChild(createOptionButton(option));
-      });
+    // Initialize with first post
+    document.addEventListener('DOMContentLoaded', () => {
+      renderPost(1);
     });
 
     // Element SDK initialization
@@ -323,5 +381,5 @@
       });
     }
   </script>
- <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9d30782285980a85',t:'MTc3MTk1MTkwMy4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9d309d0c308a81b5',t:'MTc3MTk1MzQxNS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>

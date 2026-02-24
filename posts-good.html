@@ -19,16 +19,19 @@
     <div class="text-center mb-8">
      <h1 id="main-title" class="text-2xl md:text-3xl font-bold mb-2" style="color: #002855;">Why Is This Post Effective?</h1>
      <p id="instruction-text" class="text-gray-600">Click on the elements below that make this post work well</p>
+    </div><!-- Post Navigation Buttons -->
+    <div class="flex gap-3 mb-6 justify-center"><button id="post-1-btn" onclick="switchPost(1)" class="px-6 py-2 rounded-lg font-semibold transition-all" style="background-color: #0070F0; color: white;"> Post 1 </button> <button id="post-2-btn" onclick="switchPost(2)" class="px-6 py-2 rounded-lg font-semibold transition-all" style="background-color: #e5e7eb; color: #002855;"> Post 2 </button>
     </div><!-- Main Layout: Post + Analysis Side by Side -->
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6"><!-- Example Post Card -->
-     <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 h-fit" style="border-left-color: #0070F0;">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
+     <!-- Post 1 Card -->
+     <div id="post-1-card" class="bg-white rounded-xl shadow-lg p-6 border-l-4 h-fit" style="border-left-color: #0070F0;">
       <div class="flex items-center gap-3 mb-4">
        <div class="w-10 h-10 rounded-full flex items-center justify-center text-white font-bold" style="background: linear-gradient(135deg, #0070F0, #46B1EF);">
         JD
        </div>
        <div>
-        <p class="font-semibold" style="color: #002855;">John Doe</p>
-        <p class="text-xs text-gray-500">Peer Coach</p>
+        <p class="font-semibold" style="color: #002855;">Aidan Clements</p>
+        <p class="text-xs text-gray-500">Peer Coach Student Intern</p>
        </div>
       </div>
       <div class="space-y-3 text-gray-800">
@@ -42,28 +45,25 @@
        <p class="text-sm">Or…</p>
        <p class="text-sm">Professor Messer How to Pass Your CompTIA N10-009 Network+ Exam</p>
       </div>
+     </div><!-- Post 2 Card -->
+     <div id="post-2-card" class="bg-white rounded-xl shadow-lg p-6 border-l-4 h-fit hidden" style="border-left-color: #0070F0;">
+      <div class="flex items-center gap-3 mb-4">
+       <div class="w-10 h-10 rounded-full flex items-center justify-center text-white font-bold" style="background: linear-gradient(135deg, #0070F0, #46B1EF);">
+        SM
+       </div>
+       <div>
+        <p class="font-semibold" style="color: #002855;">Ashley Collins</p>
+        <p class="text-xs text-gray-500">Peer Coach Student Intern</p>
+       </div>
+      </div>
+      <div class="space-y-3 text-gray-800">
+       <p class="font-semibold text-lg" style="color: #002855;">Your Go-To Study Break</p>
+       <p>Taking regular study breaks is crucial for retaining information. I usually step away every 45 minutes to stretch and get some water. What's your favorite way to recharge?</p>
+      </div>
      </div><!-- Clickable Analysis Options -->
-     <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 h-fit" style="border-left-color: #97E152;">
-      <p class="font-semibold text-sm uppercase tracking-wide mb-4" style="color: #002855;">Select all that apply:</p>
-      <div class="space-y-3"><button id="opt-1" onclick="toggleOption(this, true)" class="analysis-option w-full text-left p-4 bg-gray-50 rounded-lg border-2 border-gray-200 hover:border-blue-300 transition-all duration-200 flex items-center gap-3"> <span class="checkmark w-6 h-6 rounded-full border-2 border-gray-300 flex items-center justify-center flex-shrink-0 transition-all">
-         <svg class="w-4 h-4 text-white hidden" fill="currentColor" viewbox="0 0 20 20">
-          <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-         </svg></span> <span class="font-medium text-gray-700">Super short and concise</span> </button> <button id="opt-2" onclick="toggleOption(this, true)" class="analysis-option w-full text-left p-4 bg-gray-50 rounded-lg border-2 border-gray-200 hover:border-blue-300 transition-all duration-200 flex items-center gap-3"> <span class="checkmark w-6 h-6 rounded-full border-2 border-gray-300 flex items-center justify-center flex-shrink-0 transition-all">
-         <svg class="w-4 h-4 text-white hidden" fill="currentColor" viewbox="0 0 20 20">
-          <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-         </svg></span> <span class="font-medium text-gray-700">Clear, direct question</span> </button> <button id="opt-3" onclick="toggleOption(this, true)" class="analysis-option w-full text-left p-4 bg-gray-50 rounded-lg border-2 border-gray-200 hover:border-blue-300 transition-all duration-200 flex items-center gap-3"> <span class="checkmark w-6 h-6 rounded-full border-2 border-gray-300 flex items-center justify-center flex-shrink-0 transition-all">
-         <svg class="w-4 h-4 text-white hidden" fill="currentColor" viewbox="0 0 20 20">
-          <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-         </svg></span> <span class="font-medium text-gray-700">Immediately applicable to course content</span> </button> <button id="opt-4" onclick="toggleOption(this, true)" class="analysis-option w-full text-left p-4 bg-gray-50 rounded-lg border-2 border-gray-200 hover:border-blue-300 transition-all duration-200 flex items-center gap-3"> <span class="checkmark w-6 h-6 rounded-full border-2 border-gray-300 flex items-center justify-center flex-shrink-0 transition-all">
-         <svg class="w-4 h-4 text-white hidden" fill="currentColor" viewbox="0 0 20 20">
-          <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-         </svg></span> <span class="font-medium text-gray-700">Written by a human with no emojis or AI content</span> </button> <button id="opt-5" onclick="toggleOption(this, false)" class="analysis-option w-full text-left p-4 bg-gray-50 rounded-lg border-2 border-gray-200 hover:border-blue-300 transition-all duration-200 flex items-center gap-3"> <span class="checkmark w-6 h-6 rounded-full border-2 border-gray-300 flex items-center justify-center flex-shrink-0 transition-all">
-         <svg class="w-4 h-4 text-white hidden" fill="currentColor" viewbox="0 0 20 20">
-          <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-         </svg></span> <span class="font-medium text-gray-700">Uses trending hashtags and emojis</span> </button> <button id="opt-6" onclick="toggleOption(this, false)" class="analysis-option w-full text-left p-4 bg-gray-50 rounded-lg border-2 border-gray-200 hover:border-blue-300 transition-all duration-200 flex items-center gap-3"> <span class="checkmark w-6 h-6 rounded-full border-2 border-gray-300 flex items-center justify-center flex-shrink-0 transition-all">
-         <svg class="w-4 h-4 text-white hidden" fill="currentColor" viewbox="0 0 20 20">
-          <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-         </svg></span> <span class="font-medium text-gray-700">Long detailed explanation with multiple paragraphs</span> </button>
+     <div class="space-y-3">
+      <p class="font-semibold text-sm uppercase tracking-wide" style="color: #002855;">Select all that apply:</p>
+      <div id="options-container"><!-- Options will be inserted here by JavaScript -->
       </div>
      </div>
     </div><!-- Full-Width Check Answers Button --> <button id="check-btn" onclick="checkAnswers()" class="w-full py-4 rounded-lg font-semibold text-white text-lg transition-all duration-200 hover:shadow-lg transform hover:-translate-y-0.5 mb-6" style="background-color: #0070F0;"> Check My Answers </button> <!-- Feedback Area -->
@@ -88,10 +88,80 @@
       background_color: "#F1F1F1"
     };
 
+    let currentPost = 1;
     let selectedOptions = new Set();
     let answered = false;
 
-    function toggleOption(btn, isCorrect) {
+    const postsData = {
+      1: {
+        options: [
+          { id: 'opt-1', text: 'Super short and concise', correct: true },
+          { id: 'opt-2', text: 'Clear, direct question', correct: true },
+          { id: 'opt-3', text: 'Immediately applicable to course content', correct: true },
+          { id: 'opt-4', text: 'Written by a human with no emojis or AI content', correct: true },
+          { id: 'opt-5', text: 'Uses trending hashtags and emojis', correct: false },
+          { id: 'opt-6', text: 'Long detailed explanation with multiple paragraphs', correct: false }
+        ]
+      },
+      2: {
+        options: [
+          { id: 'opt-1', text: 'Relatable personal practice', correct: true },
+          { id: 'opt-2', text: 'Immediately applicable to course content', correct: true },
+          { id: 'opt-3', text: 'Encourages community engagement', correct: false },
+          { id: 'opt-4', text: 'Highly technical and course-specific', correct: false },
+          { id: 'opt-5', text: 'Uses trending hashtags and emojis', correct: false },
+          { id: 'opt-6', text: 'Long detailed explanation with multiple paragraphs', correct: false }
+        ]
+      }
+    };
+
+    function createOptionButton(option) {
+      const button = document.createElement('button');
+      button.id = option.id;
+      button.className = 'analysis-option w-full text-left p-4 bg-white rounded-lg border-2 border-gray-200 hover:border-blue-300 transition-all duration-200 flex items-center gap-3';
+      button.onclick = (e) => toggleOption(e.target.closest('button'));
+      button.innerHTML = `
+        <span class="checkmark w-6 h-6 rounded-full border-2 border-gray-300 flex items-center justify-center flex-shrink-0 transition-all">
+          <svg class="w-4 h-4 text-white hidden" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+          </svg>
+        </span>
+        <span class="font-medium text-gray-700">${option.text}</span>
+      `;
+      return button;
+    }
+
+    function switchPost(postNum) {
+      if (postNum === currentPost) return;
+      
+      currentPost = postNum;
+      selectedOptions.clear();
+      answered = false;
+      
+      // Update button styles
+      document.getElementById('post-1-btn').style.backgroundColor = postNum === 1 ? '#0070F0' : '#e5e7eb';
+      document.getElementById('post-1-btn').style.color = postNum === 1 ? 'white' : '#002855';
+      document.getElementById('post-2-btn').style.backgroundColor = postNum === 2 ? '#0070F0' : '#e5e7eb';
+      document.getElementById('post-2-btn').style.color = postNum === 2 ? 'white' : '#002855';
+      
+      // Toggle post visibility
+      document.getElementById('post-1-card').classList.toggle('hidden');
+      document.getElementById('post-2-card').classList.toggle('hidden');
+      
+      // Render new options
+      const container = document.getElementById('options-container');
+      container.innerHTML = '';
+      postsData[currentPost].options.forEach(option => {
+        container.appendChild(createOptionButton(option));
+      });
+      
+      // Reset feedback
+      document.getElementById('feedback').classList.add('hidden');
+      document.getElementById('check-btn').style.display = 'block';
+      document.getElementById('reset-btn').classList.add('hidden');
+    }
+
+    function toggleOption(btn) {
       if (answered) return;
       
       const optionId = btn.id;
@@ -119,8 +189,9 @@
       if (answered) return;
       answered = true;
 
-      const correctAnswers = ['opt-1', 'opt-2', 'opt-3', 'opt-4'];
-      const incorrectAnswers = ['opt-5', 'opt-6'];
+      const options = postsData[currentPost].options;
+      const correctAnswers = options.filter(o => o.correct).map(o => o.id);
+      const incorrectAnswers = options.filter(o => !o.correct).map(o => o.id);
       
       let correctCount = 0;
       let wrongSelections = 0;
@@ -156,13 +227,19 @@
       
       feedback.classList.remove('hidden');
       
-      if (correctCount === 4 && wrongSelections === 0) {
+      const expectedCorrect = correctAnswers.length;
+      
+      if (correctCount === expectedCorrect && wrongSelections === 0) {
         feedback.style.backgroundColor = '#dcfce7';
         feedback.style.color = '#166534';
         feedbackIcon.textContent = '🎉';
         feedbackTitle.textContent = 'Perfect!';
-        feedbackText.textContent = 'You identified all the key elements that make this post effective: brevity, clarity, relevance, and authentic human writing.';
-      } else if (correctCount >= 3 && wrongSelections <= 1) {
+        if (currentPost === 1) {
+          feedbackText.textContent = 'You identified all the key elements that make this post effective: brevity, clarity, relevance, and authentic human writing.';
+        } else {
+          feedbackText.textContent = 'Great work! You recognized what makes this post resonate with the community.';
+        }
+      } else if (correctCount >= expectedCorrect - 1 && wrongSelections <= 1) {
         feedback.style.backgroundColor = '#fef3c7';
         feedback.style.color = '#92400e';
         feedbackIcon.textContent = '👍';
@@ -173,7 +250,7 @@
         feedback.style.color = '#991b1b';
         feedbackIcon.textContent = '💡';
         feedbackTitle.textContent = 'Keep learning!';
-        feedbackText.textContent = 'Take another look at the post. Effective posts are short, clear, relevant, and sound human—not AI-generated.';
+        feedbackText.textContent = 'Take another look at the post. Effective posts connect with the community and provide value.';
       }
 
       document.getElementById('check-btn').style.display = 'none';
@@ -201,6 +278,14 @@
       document.getElementById('check-btn').style.display = 'block';
       document.getElementById('reset-btn').classList.add('hidden');
     }
+
+    // Initialize on load
+    window.addEventListener('DOMContentLoaded', () => {
+      const container = document.getElementById('options-container');
+      postsData[1].options.forEach(option => {
+        container.appendChild(createOptionButton(option));
+      });
+    });
 
     // Element SDK initialization
     async function onConfigChange(config) {
@@ -238,5 +323,5 @@
       });
     }
   </script>
- <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9d3064ef827c0a85',t:'MTc3MTk1MTExNi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9d30782285980a85',t:'MTc3MTk1MTkwMy4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>

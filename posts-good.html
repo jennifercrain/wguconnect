@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en" class="h-full">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Post Analysis Practice</title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script src="/_sdk/element_sdk.js"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+    * { font-family: Arial, sans-serif; }
+  </style>
+  <style>body { box-sizing: border-box; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+ </head>
+ <body class="h-full m-0 p-0">
+  <div id="app-wrapper" class="h-full w-full overflow-auto" style="background-color: #F1F1F1;">
+   <div class="max-w-6xl mx-auto p-6 md:p-8"><!-- Header -->
+    <div class="text-center mb-8">
+     <h1 id="main-title" class="text-2xl md:text-3xl font-bold mb-2" style="color: #002855;">Why Is This Post Effective?</h1>
+     <p id="instruction-text" class="text-gray-600">Click on the elements below that make this post work well</p>
+    </div><!-- Main Layout: Post + Analysis Side by Side -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6"><!-- Example Post Card -->
+     <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 h-fit" style="border-left-color: #0070F0;">
+      <div class="flex items-center gap-3 mb-4">
+       <div class="w-10 h-10 rounded-full flex items-center justify-center text-white font-bold" style="background: linear-gradient(135deg, #0070F0, #46B1EF);">
+        JD
+       </div>
+       <div>
+        <p class="font-semibold" style="color: #002855;">John Doe</p>
+        <p class="text-xs text-gray-500">Peer Coach</p>
+       </div>
+      </div>
+      <div class="space-y-3 text-gray-800">
+       <p class="font-semibold text-lg" style="color: #002855;">Which Udemy Course Do you Prefer?</p>
+       <p>Which Udemy Course do you prefer to study for Network+?</p>
+       <ul class="space-y-2 text-sm">
+        <li>• Andrew Ramdayal CompTIA Network+ N10-009 Full Course, Labs, Course Notes | Udemy Business</li>
+        <li>• Jason Dion CompTIA Network+ (N10-009) Full Course &amp; Practice Exam | Udemy Business</li>
+        <li>• Mike Myers TOTAL: CompTIA Network+ (N10-009) + Practice Exam | Udemy Business</li>
+       </ul>
+       <p class="text-sm">Or…</p>
+       <p class="text-sm">Professor Messer How to Pass Your CompTIA N10-009 Network+ Exam</p>
+      </div>
+     </div><!-- Clickable Analysis Options -->
+     <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 h-fit" style="border-left-color: #97E152;">
+      <p class="font-semibold text-sm uppercase tracking-wide mb-4" style="color: #002855;">Select all that apply:</p>
+      <div class="space-y-3"><button id="opt-1" onclick="toggleOption(this, true)" class="analysis-option w-full text-left p-4 bg-gray-50 rounded-lg border-2 border-gray-200 hover:border-blue-300 transition-all duration-200 flex items-center gap-3"> <span class="checkmark w-6 h-6 rounded-full border-2 border-gray-300 flex items-center justify-center flex-shrink-0 transition-all">
+         <svg class="w-4 h-4 text-white hidden" fill="currentColor" viewbox="0 0 20 20">
+          <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+         </svg></span> <span class="font-medium text-gray-700">Super short and concise</span> </button> <button id="opt-2" onclick="toggleOption(this, true)" class="analysis-option w-full text-left p-4 bg-gray-50 rounded-lg border-2 border-gray-200 hover:border-blue-300 transition-all duration-200 flex items-center gap-3"> <span class="checkmark w-6 h-6 rounded-full border-2 border-gray-300 flex items-center justify-center flex-shrink-0 transition-all">
+         <svg class="w-4 h-4 text-white hidden" fill="currentColor" viewbox="0 0 20 20">
+          <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+         </svg></span> <span class="font-medium text-gray-700">Clear, direct question</span> </button> <button id="opt-3" onclick="toggleOption(this, true)" class="analysis-option w-full text-left p-4 bg-gray-50 rounded-lg border-2 border-gray-200 hover:border-blue-300 transition-all duration-200 flex items-center gap-3"> <span class="checkmark w-6 h-6 rounded-full border-2 border-gray-300 flex items-center justify-center flex-shrink-0 transition-all">
+         <svg class="w-4 h-4 text-white hidden" fill="currentColor" viewbox="0 0 20 20">
+          <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+         </svg></span> <span class="font-medium text-gray-700">Immediately applicable to course content</span> </button> <button id="opt-4" onclick="toggleOption(this, true)" class="analysis-option w-full text-left p-4 bg-gray-50 rounded-lg border-2 border-gray-200 hover:border-blue-300 transition-all duration-200 flex items-center gap-3"> <span class="checkmark w-6 h-6 rounded-full border-2 border-gray-300 flex items-center justify-center flex-shrink-0 transition-all">
+         <svg class="w-4 h-4 text-white hidden" fill="currentColor" viewbox="0 0 20 20">
+          <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+         </svg></span> <span class="font-medium text-gray-700">Written by a human with no emojis or AI content</span> </button> <button id="opt-5" onclick="toggleOption(this, false)" class="analysis-option w-full text-left p-4 bg-gray-50 rounded-lg border-2 border-gray-200 hover:border-blue-300 transition-all duration-200 flex items-center gap-3"> <span class="checkmark w-6 h-6 rounded-full border-2 border-gray-300 flex items-center justify-center flex-shrink-0 transition-all">
+         <svg class="w-4 h-4 text-white hidden" fill="currentColor" viewbox="0 0 20 20">
+          <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+         </svg></span> <span class="font-medium text-gray-700">Uses trending hashtags and emojis</span> </button> <button id="opt-6" onclick="toggleOption(this, false)" class="analysis-option w-full text-left p-4 bg-gray-50 rounded-lg border-2 border-gray-200 hover:border-blue-300 transition-all duration-200 flex items-center gap-3"> <span class="checkmark w-6 h-6 rounded-full border-2 border-gray-300 flex items-center justify-center flex-shrink-0 transition-all">
+         <svg class="w-4 h-4 text-white hidden" fill="currentColor" viewbox="0 0 20 20">
+          <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+         </svg></span> <span class="font-medium text-gray-700">Long detailed explanation with multiple paragraphs</span> </button>
+      </div>
+     </div>
+    </div><!-- Full-Width Check Answers Button --> <button id="check-btn" onclick="checkAnswers()" class="w-full py-4 rounded-lg font-semibold text-white text-lg transition-all duration-200 hover:shadow-lg transform hover:-translate-y-0.5 mb-6" style="background-color: #0070F0;"> Check My Answers </button> <!-- Feedback Area -->
+    <div id="feedback" class="p-5 rounded-xl hidden">
+     <div class="flex items-start gap-3"><span id="feedback-icon" class="text-2xl"></span>
+      <div>
+       <p id="feedback-title" class="font-bold text-lg mb-1"></p>
+       <p id="feedback-text" class="text-sm opacity-90"></p>
+      </div>
+     </div>
+    </div><!-- Reset Button --> <button id="reset-btn" onclick="resetQuiz()" class="hidden w-full mt-4 py-3 rounded-lg font-semibold border-2 transition-all duration-200 hover:bg-gray-100" style="border-color: #002855; color: #002855;"> Try Again </button>
+   </div>
+  </div>
+  <script>
+    const defaultConfig = {
+      main_title: "Why Is This Post Effective?",
+      instruction_text: "Click on the elements below that make this post work well",
+      primary_color: "#002855",
+      accent_color: "#0070F0",
+      success_color: "#97E152",
+      highlight_color: "#46B1EF",
+      background_color: "#F1F1F1"
+    };
+
+    let selectedOptions = new Set();
+    let answered = false;
+
+    function toggleOption(btn, isCorrect) {
+      if (answered) return;
+      
+      const optionId = btn.id;
+      const checkmark = btn.querySelector('.checkmark');
+      const svg = checkmark.querySelector('svg');
+      
+      if (selectedOptions.has(optionId)) {
+        selectedOptions.delete(optionId);
+        btn.classList.remove('border-blue-500', 'bg-blue-50');
+        btn.classList.add('border-gray-200');
+        checkmark.classList.remove('bg-blue-500', 'border-blue-500');
+        checkmark.classList.add('border-gray-300');
+        svg.classList.add('hidden');
+      } else {
+        selectedOptions.add(optionId);
+        btn.classList.add('border-blue-500', 'bg-blue-50');
+        btn.classList.remove('border-gray-200');
+        checkmark.classList.add('bg-blue-500', 'border-blue-500');
+        checkmark.classList.remove('border-gray-300');
+        svg.classList.remove('hidden');
+      }
+    }
+
+    function checkAnswers() {
+      if (answered) return;
+      answered = true;
+
+      const correctAnswers = ['opt-1', 'opt-2', 'opt-3', 'opt-4'];
+      const incorrectAnswers = ['opt-5', 'opt-6'];
+      
+      let correctCount = 0;
+      let wrongSelections = 0;
+
+      // Check correct answers
+      correctAnswers.forEach(id => {
+        const btn = document.getElementById(id);
+        if (selectedOptions.has(id)) {
+          correctCount++;
+          btn.style.borderColor = '#97E152';
+          btn.style.backgroundColor = '#f0fdf4';
+        } else {
+          btn.style.borderColor = '#fbbf24';
+          btn.style.backgroundColor = '#fffbeb';
+        }
+      });
+
+      // Check incorrect answers
+      incorrectAnswers.forEach(id => {
+        const btn = document.getElementById(id);
+        if (selectedOptions.has(id)) {
+          wrongSelections++;
+          btn.style.borderColor = '#ef4444';
+          btn.style.backgroundColor = '#fef2f2';
+        }
+      });
+
+      // Show feedback
+      const feedback = document.getElementById('feedback');
+      const feedbackIcon = document.getElementById('feedback-icon');
+      const feedbackTitle = document.getElementById('feedback-title');
+      const feedbackText = document.getElementById('feedback-text');
+      
+      feedback.classList.remove('hidden');
+      
+      if (correctCount === 4 && wrongSelections === 0) {
+        feedback.style.backgroundColor = '#dcfce7';
+        feedback.style.color = '#166534';
+        feedbackIcon.textContent = '🎉';
+        feedbackTitle.textContent = 'Perfect!';
+        feedbackText.textContent = 'You identified all the key elements that make this post effective: brevity, clarity, relevance, and authentic human writing.';
+      } else if (correctCount >= 3 && wrongSelections <= 1) {
+        feedback.style.backgroundColor = '#fef3c7';
+        feedback.style.color = '#92400e';
+        feedbackIcon.textContent = '👍';
+        feedbackTitle.textContent = 'Good job!';
+        feedbackText.textContent = 'You got most of them right. Review the highlighted answers to see what makes an effective post.';
+      } else {
+        feedback.style.backgroundColor = '#fee2e2';
+        feedback.style.color = '#991b1b';
+        feedbackIcon.textContent = '💡';
+        feedbackTitle.textContent = 'Keep learning!';
+        feedbackText.textContent = 'Take another look at the post. Effective posts are short, clear, relevant, and sound human—not AI-generated.';
+      }
+
+      document.getElementById('check-btn').style.display = 'none';
+      document.getElementById('reset-btn').classList.remove('hidden');
+    }
+
+    function resetQuiz() {
+      answered = false;
+      selectedOptions.clear();
+      
+      document.querySelectorAll('.analysis-option').forEach(btn => {
+        btn.style.borderColor = '';
+        btn.style.backgroundColor = '';
+        btn.classList.remove('border-blue-500', 'bg-blue-50');
+        btn.classList.add('border-gray-200');
+        
+        const checkmark = btn.querySelector('.checkmark');
+        const svg = checkmark.querySelector('svg');
+        checkmark.classList.remove('bg-blue-500', 'border-blue-500');
+        checkmark.classList.add('border-gray-300');
+        svg.classList.add('hidden');
+      });
+
+      document.getElementById('feedback').classList.add('hidden');
+      document.getElementById('check-btn').style.display = 'block';
+      document.getElementById('reset-btn').classList.add('hidden');
+    }
+
+    // Element SDK initialization
+    async function onConfigChange(config) {
+      document.getElementById('main-title').textContent = config.main_title || defaultConfig.main_title;
+      document.getElementById('instruction-text').textContent = config.instruction_text || defaultConfig.instruction_text;
+    }
+
+    if (window.elementSdk) {
+      window.elementSdk.init({
+        defaultConfig,
+        onConfigChange,
+        mapToCapabilities: (config) => ({
+          recolorables: [
+            {
+              get: () => config.background_color || defaultConfig.background_color,
+              set: (value) => window.elementSdk.setConfig({ background_color: value })
+            },
+            {
+              get: () => config.primary_color || defaultConfig.primary_color,
+              set: (value) => window.elementSdk.setConfig({ primary_color: value })
+            },
+            {
+              get: () => config.accent_color || defaultConfig.accent_color,
+              set: (value) => window.elementSdk.setConfig({ accent_color: value })
+            }
+          ],
+          borderables: [],
+          fontEditable: undefined,
+          fontSizeable: undefined
+        }),
+        mapToEditPanelValues: (config) => new Map([
+          ["main_title", config.main_title || defaultConfig.main_title],
+          ["instruction_text", config.instruction_text || defaultConfig.instruction_text]
+        ])
+      });
+    }
+  </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9d3064ef827c0a85',t:'MTc3MTk1MTExNi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
